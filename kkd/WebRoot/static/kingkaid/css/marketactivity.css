@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+		body{
+			font-family: 'Yanone Kaffeesatz', sans-serif;
+			background:#f0f0f0;
+		}
+		body{
+			font-size:14px;
+			max-width:640px;
+			margin:0 auto;
+			transition:0.5s all;
+			-webkit-transition:0.5s all;
+			-moz-transition:0.5s all;
+			-o-transition:0.5s all;
+			-ms-transition:0.5s all;
+		}
+		span,p,a{margin:0; padding:0;background:#f0f0f0;outline:none;text-decoration:none;}
+		
+		.container{
+			max-width:640px;
+			background:#fff;
+			margin:12px 0;
+			padding:0 12px;
+			}
+		.img-responsive,
+		 img {
+		  display: block;
+		  max-width: 100%;
+		  height:auto;
+		  text-align:center;
+		  margin:0;
+		  border:0;
+		  text-decoration:none;
+		}
+	.activname,.activin,.activend{
+		display:inline-block;
+		height:1.8em;
+		line-height:1.8em;
+		font-size:1.8em;
+		text-align:left;
+		color:#333;
+		background:#fff;
+		}
+	.activapp2{
+		line-height:1.8em;
+		}
+	.appcircle{
+		width:2px;
+		height:2px;
+		margin-bottom:0.8em;
+		border-radius:1px;
+		vertical-align:middle;
+		display:inline-block;
+		background:#000;
+		}
+	.appline{
+		display:inline-block;
+		width:0.1em;
+		height:1.8em;
+		margin:0.6em 1.2em 0 0;
+		float:right;
+		background:#666;
+		}
+	.activin,.activend{
+		color:#ee4639;
+		float:right;
+		text-align:right;
+		}
+	.activend{
+		color:#999;
+		}
+
+

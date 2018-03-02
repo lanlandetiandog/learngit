@@ -1,0 +1,32 @@
+/*表单校验提示*/
+em.error {
+    color:#ea6660;
+    font-size: 12px;
+}
+
+/*安全中心校验提示*/
+em.sc-error {
+	color:#ea6660;
+    font-size: 12px;
+	margin-left: 105px
+}
+
+/*安全中心进度条*/
+.process_bar { 
+        position: relative; 
+        width: 170px;
+        background: #DCDCDC
+    } 
+.process_bar span {
+        display: block;
+        position: relative;
+        background:#EA6660;
+        height: 13px; 
+    } 
+.process_bar_text{
+        float:left;
+        color:#ea6660;
+        font-size: 12px;
+        display: inline-block;
+        margin:3px 5px 0px 0px;
+}

@@ -1,0 +1,11 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, blockquote, pre, form, fieldset, table, th, td, span{padding:0;margin:0;}
+#full-screen-slider { width:100%; height:396px; float:left; position:relative; margin-top:30px;}
+#slides { display:block; width:100%; height:396px; list-style:none; padding:0; margin:0; position:relative}
+#slides li { display:block; width:100%; height:100%; list-style:none; padding:0; margin:0; position:absolute}
+#slides li a { display:block; width:100%; height:100%; text-indent:-9999px}
+#pagination { display:block; list-style:none;position: relative; z-index:999;height:10px;width:160px;margin-top: -30px;}
+#pagination li { display:block; list-style:none; width:10px; height:10px; float:left; margin-left:15px; border-radius:5px; background:#9ebfbf;}
+#pagination li a { display:block; width:100%; height:100%; padding:0; margin:0;  text-indent:-9999px;}
+#pagination li.current { background:#fff}
+.banner-bottom{width:1210px;margin:348px auto 0 auto;height:48px;}
+.banner-news{width:958px;height:48px;line-height:48px;background-color:#000;opacity:0.4;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);color:#fff;font-size:16px;padding-left:34px;float:right;}

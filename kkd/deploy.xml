@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="GBK"?>
+<project name="kkd" default="wartest" basedir=".">
+	<property name="src.dir" location="src"/>
+	<property name="deploy.dir" location="deploy"/>
+	<property name="webroot" location="WebRoot"/>
+	<property environment="SystemVariable" />
+	<property name="classes.dir" location="${webroot}/WEB-INF/classes" />
+
+	<path id="compile.classpath">
+		<fileset dir="${basedir}/compile_lib">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${basedir}/WebRoot/WEB-INF/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean">
+		<delete dir="${classes.dir}"/>
+		<delete file="${deploy.dir}/war-prod/kkd.war" />
+		<delete file="${deploy.dir}/war-test/kkd.war" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${classes.dir}" />
+	</target>
+	
+	<target name="java-compile" depends="init">
+		<echo>+ =================================================+</echo>
+		<echo>+                                                  +</echo>
+		<echo>+               java-compile                       +</echo>
+		<echo>+	                                                 +</echo>
+		<echo>+ =================================================+</echo>
+		<javac destdir="${classes.dir}"
+			fork="true"
+			debug="true"
+			includeantruntime="false"
+			memoryMaximumSize="1024m"
+			encoding="UTF-8"
+			classpathref="compile.classpath"
+			executable="${SystemVariable.JAVA_HOME}\bin\javac" >
+			<src path="${src.dir}"/>
+		</javac>
+		<copy includeemptydirs="false" todir="${classes.dir}">
+			<fileset dir="${src.dir}/" excludes="**/*.java" />
+		</copy>
+	</target>
+
+	<target name="warprod" depends="java-compile">
+		<copy todir="${classes.dir}" file="${deploy.dir}/conf-prod/application.properties" overwrite="true"/>
+		<war destfile="${deploy.dir}/war-prod/kkd.war" webxml="${webroot}/WEB-INF/web.xml" basedir="${webroot}"/>
+	</target>
+	
+	<target name="wartest" depends="java-compile">
+		<copy todir="${classes.dir}" file="${deploy.dir}/conf-test/application.properties" overwrite="true"/>
+		<war destfile="${deploy.dir}/war-test/kkd.war" webxml="${webroot}/WEB-INF/web.xml" basedir="${webroot}"/>
+	</target>
+
+</project>
